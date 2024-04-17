@@ -1,0 +1,64 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.footer .social-links {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  max-width: 200px;
+  margin-top: 20px;
+}
+
+.footer .social-links button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social-links .insta:hover {
+  background-color: #da1863;
+}
+
+.social-links .pin:hover {
+  background-color: #ff0000;
+}
+
+.social-links .what:hover {
+  background-color: #175e06;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.address h5 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.address p {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  margin-top: 5px;
+}

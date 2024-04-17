@@ -1,0 +1,30 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 140px;
+
+  gap: 10px;
+}
+.banner {
+  margin: 20px auto;
+  width: 80%;
+  display: block;
+}
+.category-indexsort {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 150px;
+  align-items: center;
+}
+.category-indexsort p span {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.sort {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+}

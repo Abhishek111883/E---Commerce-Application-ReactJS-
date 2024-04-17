@@ -1,0 +1,9 @@
+.breadcrum {
+  display: flex;
+  margin: 20px 0 20px 200px;
+  gap: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: 700;
+}

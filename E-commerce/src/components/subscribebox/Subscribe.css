@@ -1,0 +1,77 @@
+.subscribe-box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  background: rgb(105, 105, 105);
+  background: linear-gradient(
+    209deg,
+    rgba(105, 105, 105, 0.8156512605042017) 12%,
+    rgba(0, 0, 0, 1) 52%
+  );
+  color: white;
+  height: 50vh;
+  margin: auto;
+  width: 80%;
+
+  margin-bottom: 50px;
+}
+
+.subscribe-box h1 {
+  font-size: 3rem;
+}
+.subscribe-box p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.subscribe-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.subscribe-input input {
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  max-width: 400px;
+  width: 350px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  outline: none;
+}
+
+.subscribe-input input::placeholder {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.subscribe-input input:focus {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+.subscribe-input button {
+  padding: 10px 20px;
+  border-radius: 25px;
+  background-color: #ff4d4d;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border: none;
+  margin: 0;
+  /* margin-left: -70px; */
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.subscribe-input button:hover {
+  background-color: #ff0000;
+}
