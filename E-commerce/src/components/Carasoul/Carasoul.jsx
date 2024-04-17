@@ -11,8 +11,8 @@ const Carasoul = () => {
       <section className="container">
         <div className="slider-wrapper">
           <div className="slider">
-            <img id="slide-1" src={pro2} alt="" />
-            <img id="slide-2" src={pro1} />
+            <img id="slide-1" src={pro1} alt="" />
+            <img id="slide-2" src={pro2} />
             <img id="slide-3" src={pro3} />
           </div>
           <div className="slider-nav">

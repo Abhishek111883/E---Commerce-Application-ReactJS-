@@ -59,9 +59,24 @@ function NavBar() {
         </ul>
 
         <div className="cart">
-          <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
-            <button>Login</button>
-          </Link>
+          {localStorage.getItem("auth-token") ? (
+            <button
+              onClick={() => {
+                localStorage.removeItem("auth-token");
+                window.location.replace("/");
+              }}
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <button>Login</button>
+            </Link>
+          )}
+
           <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
             <img src={cart_icon} />
           </Link>
