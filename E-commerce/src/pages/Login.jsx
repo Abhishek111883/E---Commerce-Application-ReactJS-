@@ -5,6 +5,11 @@ import { useState } from "react";
 import { AiFillEye } from "react-icons/ai";
 import { AiFillEyeInvisible } from "react-icons/ai";
 
+import { Zoom, toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
   const [showPass, setShowPass] = useState(false);
   const [formdata, setFormdata] = useState({
@@ -12,6 +17,8 @@ const Login = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const showPassword = () => {
     setShowPass(!showPass);
@@ -35,16 +42,51 @@ const Login = () => {
     console.log(result);
 
     if (result.success) {
-      alert("Login successful");
+      toast.success("Login Successful", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Zoom,
+      });
       localStorage.setItem("auth-token", result.token);
-      window.location.replace("/");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
     } else {
-      alert(result.message);
+      toast.error(result.message, {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Zoom,
+      });
     }
   };
 
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+        transition={Zoom}
+      />
       <div className="background">
         <div className="login">
           <h1>Login</h1>

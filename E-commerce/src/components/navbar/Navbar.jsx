@@ -12,6 +12,14 @@ function NavBar() {
   const { totalcount, darkMode, toggleDarkMode } = useContext(Categorycontext);
   console.log("Total count:", totalcount());
 
+  const authToken = localStorage.getItem("auth-token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("auth-token");
+    // Redirect to the home page after logout
+    window.location.replace("/");
+  };
+
   return (
     <div>
       <div className="navbar">
@@ -59,15 +67,8 @@ function NavBar() {
         </ul>
 
         <div className="cart">
-          {localStorage.getItem("auth-token") ? (
-            <button
-              onClick={() => {
-                localStorage.removeItem("auth-token");
-                window.location.replace("/");
-              }}
-            >
-              Logout
-            </button>
+          {authToken ? (
+            <button onClick={handleLogout}>Logout</button>
           ) : (
             <Link
               to="/login"
