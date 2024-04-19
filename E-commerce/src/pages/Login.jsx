@@ -28,8 +28,31 @@ const Login = () => {
     setFormdata({ ...formdata, [e.target.name]: e.target.value });
   };
 
+  const handlekeydown = (e) => {
+    if (e.key == "Enter") {
+      login();
+    }
+  };
+
   const login = async () => {
-    console.log(formdata);
+    const { email, password } = formdata;
+
+    if (!email || !password) {
+      toast.error("Please fill in all fields", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Zoom,
+      });
+      return;
+    }
+
+    // console.log(formdata);
     let result = await fetch("http://localhost:5000/login", {
       method: "POST",
       body: JSON.stringify(formdata),
@@ -94,6 +117,7 @@ const Login = () => {
             name="email"
             value={formdata.email}
             onChange={handleChange}
+            onKeyDown={handlekeydown}
             type="email"
             placeholder="Email"
           />
@@ -103,6 +127,7 @@ const Login = () => {
               name="password"
               value={formdata.password}
               onChange={handleChange}
+              onKeyDown={handlekeydown}
               type={showPass ? "text" : "password"}
               placeholder="Password"
             />

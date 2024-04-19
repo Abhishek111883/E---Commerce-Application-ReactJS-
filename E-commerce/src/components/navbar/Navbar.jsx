@@ -1,10 +1,13 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import hosnest from "../assets/Honest.png";
 import cart_icon from "../assets/cart_icon.png";
 import "./Nav.css";
 import { Link } from "react-router-dom";
+
 import Toogle from "../toogle/Toogle";
 import { Categorycontext } from "../../context/Categorycontext";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function NavBar() {
   const [menu, setmenu] = useState("Home");
@@ -14,6 +17,23 @@ function NavBar() {
 
   const authToken = localStorage.getItem("auth-token");
 
+  useEffect(() => {
+    // Display toast message when authToken changes
+    if (authToken) {
+      toast.success("Welcome to Honest Harbour", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Bounce,
+      });
+    }
+  }, [authToken]); // Listen for changes in authToken
+
   const handleLogout = () => {
     localStorage.removeItem("auth-token");
     // Redirect to the home page after logout
@@ -22,6 +42,20 @@ function NavBar() {
 
   return (
     <div>
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        transition={Bounce}
+      />
+
       <div className="navbar">
         <div className="navbar-logo">
           <img src={hosnest} />
