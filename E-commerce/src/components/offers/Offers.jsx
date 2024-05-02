@@ -1,4 +1,4 @@
-import exclusive from "../assets/exclusive_image.png";
+import exclusive from "../assets/pho.png";
 import "./Offers.css";
 
 const Offers = () => {

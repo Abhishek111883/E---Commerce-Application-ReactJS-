@@ -10,6 +10,9 @@
   padding: 1rem;
   margin: 0 auto;
   width: 90%;
+  -webkit-box-shadow: 10px 7px 49px -3px rgba(0, 0, 0, 0.85);
+  -moz-box-shadow: 10px 7px 49px -3px rgba(0, 0, 0, 0.85);
+  box-shadow: 10px 7px 49px -3px rgba(0, 0, 0, 0.85);
 }
 .offers-content {
   flex: 1;
@@ -17,14 +20,14 @@
   flex-direction: column;
   justify-content: center;
   color: white;
-  padding-left: 160px;
+  padding-left: 170px;
   line-height: 1.5;
 }
 .offers-content h1 {
   font-size: 3rem;
 }
 .offers-content p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 500;
   margin: 0;
 }
