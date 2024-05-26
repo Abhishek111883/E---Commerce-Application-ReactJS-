@@ -58,16 +58,16 @@ Welcome to our E-Commerce Website repository! This project is a full-stack web a
 
 ## Screenshots
 
-![Homepage]("./Screenshots/home.png")
+![Homepage](Screenshots/home.png)
 _Homepage of our E-Commerce Website._
 
-![Product Page]("./Screenshots/productpage.png")
+![Product Page](Screenshots/productpage.png)
 _Product page showcasing a variety of products._
 
-![Dark Mode]("./Screenshots/darkmode.png")
+![Dark Mode](Screenshots/darkmode.png)
 _Dark Mode functionality for comfortable browsing in low-light environments._
 
-![Shopping Cart]("./Screenshots/cart.png")
+![Shopping Cart](Screenshots/cart.png)
 _Shopping cart displaying selected items._
 
 ## Additional Topics
