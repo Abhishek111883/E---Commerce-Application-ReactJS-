@@ -18,6 +18,11 @@
   font-weight: 700;
   color: #060606;
 }
+
+.dark-mode .product-prices {
+  color: #fff;
+}
+
 .product-prices > .product-price-old {
   text-decoration: line-through;
   color: #a0a0a0;
@@ -56,6 +61,11 @@
   transition: all 0.18s ease-in-out;
 }
 
+.dark-mode .select_sizes > div {
+  border-color: #fff;
+  color: #fff;
+}
+
 .select_sizes > div:hover {
   cursor: pointer;
   /* border: 1px solid #060606; */
@@ -73,6 +83,11 @@
   color: #fff;
   background-color: #060606;
   transition: all 0.18s ease-in-out;
+}
+
+.dark-mode .product-right > button {
+  color: #060606;
+  background-color: #fff;
 }
 
 button:hover {

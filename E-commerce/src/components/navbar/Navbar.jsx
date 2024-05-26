@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from "react";
-import hosnest from "../assets/Honest.png";
+import honest from "../assets/Honest.png";
+import darkhonest from "../assets/Dark_Honest.png";
 import cart_icon from "../assets/cart_icon.png";
 import "./Nav.css";
 import { Link } from "react-router-dom";
@@ -8,11 +9,13 @@ import Toogle from "../toogle/Toogle";
 import { Categorycontext } from "../../context/Categorycontext";
 import { Bounce, ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { DarkModeContext } from "../../context/DarkModecontext";
 
 function NavBar() {
   const [menu, setmenu] = useState("Home");
 
-  const { totalcount, darkMode, toggleDarkMode } = useContext(Categorycontext);
+  const { totalcount } = useContext(Categorycontext);
+  const { isDarkMode } = useContext(DarkModeContext);
   console.log("Total count:", totalcount());
 
   const authToken = localStorage.getItem("auth-token");
@@ -40,6 +43,11 @@ function NavBar() {
     window.location.replace("/");
   };
 
+  const linkStyle = {
+    textDecoration: "none",
+    color: isDarkMode ? "white" : "black",
+  };
+
   return (
     <div>
       <ToastContainer
@@ -58,42 +66,36 @@ function NavBar() {
 
       <div className="navbar">
         <div className="navbar-logo">
-          <img src={hosnest} />
+          <img src={isDarkMode ? darkhonest : honest} />
         </div>
 
         <ul className="menu">
           <li onClick={() => setmenu("Home")}>
-            <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/" style={linkStyle}>
               Home
             </Link>
             {menu === "Home" && <hr />}
           </li>
           <li onClick={() => setmenu("Mens")}>
-            <Link to="/mens" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/mens" style={linkStyle}>
               Mens
             </Link>
             {menu === "Mens" && <hr />}
           </li>
           <li onClick={() => setmenu("Womens")}>
-            <Link
-              to="/womens"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/womens" style={linkStyle}>
               Womens
             </Link>
             {menu === "Womens" && <hr />}
           </li>
           <li onClick={() => setmenu("Kids")}>
-            <Link to="/kids" style={{ textDecoration: "none", color: "black" }}>
+            <Link to="/kids" style={linkStyle}>
               Kids
             </Link>
             {menu === "Kids" && <hr />}
           </li>
           <li onClick={() => setmenu("jewellery")}>
-            <Link
-              to="/jewellery"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/jewellery" style={linkStyle}>
               jewellerys
             </Link>
             {menu === "jewellery" && <hr />}
@@ -104,20 +106,17 @@ function NavBar() {
           {authToken ? (
             <button onClick={handleLogout}>Logout</button>
           ) : (
-            <Link
-              to="/login"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/login" style={linkStyle}>
               <button>Login</button>
             </Link>
           )}
 
-          <Link to="/cart" style={{ textDecoration: "none", color: "black" }}>
+          <Link to="/cart" style={linkStyle}>
             <img src={cart_icon} />
           </Link>
           <div className="cart-count"> {totalcount()}</div>
 
-          <Toogle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+          <Toogle />
         </div>
       </div>
     </div>

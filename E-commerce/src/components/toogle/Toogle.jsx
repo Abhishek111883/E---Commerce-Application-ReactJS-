@@ -1,10 +1,19 @@
 import "./Toogle.css";
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/DarkModecontext";
 
 const Toogle = () => {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
+
   return (
     <div>
       <label id="theme-toggle-button">
-        <input type="checkbox" id="toggle" />
+        <input
+          type="checkbox"
+          id="toggle"
+          checked={isDarkMode}
+          onChange={toggleDarkMode}
+        />
         <svg viewBox="0 0 69.667 44" xmlns="http://www.w3.org/2000/svg">
           <g
             transform="translate(3.5 3.5)"

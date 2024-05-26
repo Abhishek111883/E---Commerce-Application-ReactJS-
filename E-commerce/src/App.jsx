@@ -9,6 +9,7 @@ import womens_banner from "./components/assets/banner_women.png";
 import kids_banner from "./components/assets/banner_kids.png";
 import jewellery_banner from "./components/assets/jewe_banner.avif";
 import { useEffect, useState } from "react";
+import "./App.css";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Signup from "./pages/Signup.jsx";

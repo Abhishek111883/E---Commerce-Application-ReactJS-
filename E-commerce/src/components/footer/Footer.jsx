@@ -1,13 +1,18 @@
 import logo from "../assets/Honest.png";
+import darklogo from "../assets/Dark_Honest.png";
 import "./Footer.css";
 import insta from "../assets/instagram_icon.png";
 import pinterset from "../assets/pintester_icon.png";
 import whatsapp from "../assets/whatsapp_icon.png";
+import { DarkModeContext } from "../../context/DarkModecontext";
+import { useContext } from "react";
 
 const Footer = () => {
+  const { isDarkMode } = useContext(DarkModeContext);
+
   return (
     <div className="footer">
-      <img src={logo} alt="" />
+      <img src={isDarkMode ? darklogo : logo} alt="" />
       <h5>Follow Us</h5>
       <div className="social-links">
         <button className="insta">

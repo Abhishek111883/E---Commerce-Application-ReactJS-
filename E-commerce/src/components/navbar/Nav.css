@@ -40,6 +40,10 @@ body {
   flex-direction: column;
 }
 
+.menu ul li {
+  display: none;
+}
+
 .menu hr {
   width: 80%;
   height: 4px;
@@ -86,7 +90,6 @@ body {
 .cart img {
   max-width: 30px;
   position: relative;
-
   cursor: pointer;
 }
 
@@ -103,4 +106,42 @@ body {
   color: #ffffff;
   font-size: small;
   font-weight: 600;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .navbar {
+  background-color: #121212;
+  border-bottom-color: #acacac;
+}
+
+body.dark-mode .menu {
+  color: #ffffff;
+}
+
+body.dark-mode .menu li a {
+  color: #ffffff;
+}
+
+body.dark-mode .menu hr {
+  background-color: #ffffff;
+}
+
+body.dark-mode .cart button {
+  background-color: #444;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+body.dark-mode .cart img {
+  filter: invert(100%);
+}
+
+body.dark-mode .cart-count {
+  background-color: #ff0000;
+  color: #ffffff;
 }

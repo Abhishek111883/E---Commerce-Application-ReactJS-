@@ -52,11 +52,11 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
 }
 .password > .showPass {
-  background-color: white;
-  width: 50px;
+  background-color: rgb(255, 255, 255);
+  width: 40px;
   margin: 10px 0;
   padding: 10px;
-  border: none;
+  border: 1px solid #262626;
   color: rgb(0, 0, 0);
   font-size: 1rem;
   cursor: pointer;

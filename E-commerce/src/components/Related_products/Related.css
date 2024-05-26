@@ -17,6 +17,13 @@
   border: 1px solid #a0a0a0;
 }
 
+.dark-mode .related > h2 {
+  color: #fff;
+}
+.dark-mode .related > hr {
+  border-color: #fff;
+}
+
 .related-products {
   display: flex;
   flex-wrap: wrap;
