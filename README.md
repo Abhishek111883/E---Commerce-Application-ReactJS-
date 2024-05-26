@@ -5,6 +5,7 @@ Welcome to our E-Commerce Website repository! This project is a full-stack web a
 ## Features
 
 - **Frontend**:
+
   - Built with React.js for a dynamic and responsive user interface.
   - Easy navigation through categories: Men's, Women's, Kids', and Jewelry.
   - Dark mode functionality for comfortable browsing in low-light environments.
@@ -21,18 +22,19 @@ Welcome to our E-Commerce Website repository! This project is a full-stack web a
 
 1. **Navigate to the project directory:**
 
-    ```bash
-    cd e-commerce-website
-    ```
+   ```bash
+   cd e-commerce-website
+   ```
 
 2. **Install dependencies for both frontend and backend:**
 
-    ```bash
-    cd client && npm install
-    cd ../server && npm install
-    ```
+   ```bash
+   cd client && npm install
+   cd ../server && npm install
+   ```
 
 3. **Set up environment variables:**
+
    - Create a `.env` file in the `server` directory.
    - Define the following variables:
      - `MONGODB_URI`: MongoDB connection string.
@@ -40,9 +42,9 @@ Welcome to our E-Commerce Website repository! This project is a full-stack web a
 
 4. **Run the frontend and backend concurrently:**
 
-    ```bash
-    cd .. && npm run dev
-    ```
+   ```bash
+   cd .. && npm run dev
+   ```
 
 5. **Access the application in your browser at** `http://localhost:3000`.
 
@@ -54,20 +56,30 @@ Welcome to our E-Commerce Website repository! This project is a full-stack web a
 - Apply promo codes for discounts.
 - Enjoy a seamless shopping experience with dark mode and easy navigation.
 
+## Screenshots
+
+![Homepage](screenshots/homepage.png)
+_Homepage of our E-Commerce Website._
+
+![Product Page](screenshots/product_page.png)
+_Product page showcasing a variety of products._
+
+![Dark Mode](screenshots/dark_mode.png)
+_Dark Mode functionality for comfortable browsing in low-light environments._
+
+![Shopping Cart](screenshots/shopping_cart.png)
+_Shopping cart displaying selected items._
+
 ## Additional Topics
 
 - **Testing**:
   - Explore and run tests for both frontend and backend to ensure application stability.
-  
 - **Deployment**:
   - Instructions for deploying the application to production servers or cloud platforms.
-  
 - **API Documentation**:
   - Detailed documentation of the backend API endpoints for developers to integrate with.
-  
 - **Contributing Guidelines**:
   - Guidelines for contributing to the project, including code style, issue reporting, and pull request procedures.
-  
 - **Troubleshooting**:
   - Common issues and their solutions for developers and users encountering problems with the application.
 
