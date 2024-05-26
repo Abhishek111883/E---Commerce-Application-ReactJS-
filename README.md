@@ -2,6 +2,21 @@
 
 Welcome to our E-Commerce Website repository! This project is a full-stack web application built using React.js for the frontend, and Node.js with MongoDB for the backend. It includes features such as user authentication (login and register), product categories for men's, women's, kids', and jewelry, dark mode functionality, a shopping cart with memory, total bill calculation, free shipping, and discounts via promo codes.
 
+## Features
+
+- **Frontend**:
+  - Built with React.js for a dynamic and responsive user interface.
+  - Easy navigation through categories: Men's, Women's, Kids', and Jewelry.
+  - Dark mode functionality for comfortable browsing in low-light environments.
+  - Shopping cart with memory: retains items even after page refresh.
+  - Total bill calculation with applicable discounts and free shipping.
+
+- **Backend**:
+  - Developed with Node.js for robust server-side functionality.
+  - Utilizes MongoDB for efficient data storage and retrieval.
+  - User authentication: login and register functionality.
+  - Secure handling of user data and authentication tokens.
+
 ## Installation
 
 1. **Navigate to the project directory:**
