@@ -12,7 +12,6 @@ dist
 dist-ssr
 *.local
 Screenshots
-src/components/assets
 
 
 # Editor directories and files
