@@ -82,6 +82,10 @@ _Shopping cart displaying selected items._
   - Guidelines for contributing to the project, including code style, issue reporting, and pull request procedures.
 - **Troubleshooting**:
   - Common issues and their solutions for developers and users encountering problems with the application.
+ 
+## Deployment
+
+  - **LINK** : [Cilck here](https://honest-harbour-e-commerce.netlify.app/).
 
 ## Contributing
 
