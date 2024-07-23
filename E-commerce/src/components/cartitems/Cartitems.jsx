@@ -10,7 +10,7 @@ const Cartitems = () => {
   const [isCouponApplied, setIsCouponApplied] = useState(false);
 
   const handleApplyCoupon = () => {
-    if (couponCode === "WELCOME24") {
+    if (couponCode === "NOW10") {
       setIsCouponApplied(true);
     } else {
       alert("Invalid coupon code");
