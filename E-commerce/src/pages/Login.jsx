@@ -53,14 +53,17 @@ const Login = () => {
     }
 
     // console.log(formdata);
-    let result = await fetch("http://localhost:3000/login", {
-      method: "POST",
-      body: JSON.stringify(formdata),
-      headers: {
-        Accept: "application/form-data",
-        "Content-Type": "application/json",
-      },
-    });
+    let result = await fetch(
+      "https://e-commerce-application-reactjs.onrender.com/login",
+      {
+        method: "POST",
+        body: JSON.stringify(formdata),
+        headers: {
+          Accept: "application/form-data",
+          "Content-Type": "application/json",
+        },
+      }
+    );
     result = await result.json();
 
     if (result.success) {

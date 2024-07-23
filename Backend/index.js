@@ -11,16 +11,25 @@ dotenv.config();
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors());
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-    methods: ["PUT", "POST", "DELETE", "GET"],
-  })
-);
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://honest-harbour-e-commerce.netlify.app",
+];
 
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true,
+  methods: ["PUT", "POST", "DELETE", "GET"],
+};
+
+app.use(cors(corsOptions));
 app.use("/", router);
 
 // Connect to MongoDB

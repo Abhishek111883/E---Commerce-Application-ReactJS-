@@ -48,14 +48,17 @@ const Signup = () => {
       });
       return;
     }
-    let result = await fetch("http://localhost:3000/register", {
-      method: "POST",
-      body: JSON.stringify(formdata),
-      headers: {
-        Accept: "application/form-data",
-        "Content-Type": "application/json",
-      },
-    });
+    let result = await fetch(
+      "https://e-commerce-application-reactjs.onrender.com/register",
+      {
+        method: "POST",
+        body: JSON.stringify(formdata),
+        headers: {
+          Accept: "application/form-data",
+          "Content-Type": "application/json",
+        },
+      }
+    );
     result = await result.json();
 
     if (result.success) {
