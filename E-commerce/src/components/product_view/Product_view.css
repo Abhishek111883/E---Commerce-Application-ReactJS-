@@ -21,6 +21,8 @@
 
 .dark-mode .product-prices {
   color: #fff;
+
+  transition: all 0.5s ease;
 }
 
 .product-prices > .product-price-old {
@@ -64,6 +66,8 @@
 .dark-mode .select_sizes > div {
   border-color: #fff;
   color: #fff;
+
+  transition: all 0.5s ease;
 }
 
 .select_sizes > div:hover {
@@ -88,6 +92,8 @@
 .dark-mode .product-right > button {
   color: #060606;
   background-color: #fff;
+
+  transition: all 0.5s ease;
 }
 
 button:hover {
@@ -100,4 +106,10 @@ button:hover {
   font-size: 15px;
   font-weight: 300;
   color: #060606;
+}
+
+.dark-mode .description_box {
+  color: #fff;
+
+  transition: all 0.5s ease;
 }

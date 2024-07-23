@@ -48,7 +48,7 @@ const Signup = () => {
       });
       return;
     }
-    let result = await fetch("http://localhost:5000/register", {
+    let result = await fetch("http://localhost:3000/register", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: {
@@ -57,7 +57,6 @@ const Signup = () => {
       },
     });
     result = await result.json();
-    console.log(result);
 
     if (result.success) {
       toast.success("Registration successful", {

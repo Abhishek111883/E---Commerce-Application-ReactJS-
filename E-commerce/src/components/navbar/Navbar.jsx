@@ -14,9 +14,9 @@ import { DarkModeContext } from "../../context/DarkModecontext";
 function NavBar() {
   const [menu, setmenu] = useState("Home");
 
-  const { totalcount } = useContext(Categorycontext);
+  const { totalcount, emptycart } = useContext(Categorycontext);
   const { isDarkMode } = useContext(DarkModeContext);
-  console.log("Total count:", totalcount());
+  // console.log("Total count:", totalcount());
 
   const authToken = localStorage.getItem("auth-token");
 
@@ -40,7 +40,8 @@ function NavBar() {
   const handleLogout = () => {
     localStorage.removeItem("auth-token");
     // Redirect to the home page after logout
-    window.location.replace("/");
+    // window.location.replace("/");
+    emptycart();
   };
 
   const linkStyle = {
@@ -114,7 +115,8 @@ function NavBar() {
           <Link to="/cart" style={linkStyle}>
             <img src={cart_icon} />
           </Link>
-          <div className="cart-count"> {totalcount()}</div>
+
+          <div className="cart-count">{totalcount()}</div>
 
           <Toogle />
         </div>

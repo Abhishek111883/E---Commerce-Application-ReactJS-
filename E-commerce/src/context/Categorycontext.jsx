@@ -34,6 +34,7 @@ const CategoryProvider = (props) => {
     removefromcart,
     totalcart,
     totalcount,
+    emptycart,
   };
 
   useEffect(() => {
@@ -73,6 +74,10 @@ const CategoryProvider = (props) => {
     }
 
     return totalCount;
+  }
+
+  function emptycart() {
+    setCartitem(defaultcart());
   }
 
   return (

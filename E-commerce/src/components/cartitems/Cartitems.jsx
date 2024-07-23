@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Categorycontext } from "../../context/Categorycontext";
 import remove_icon from "../assets/cart_cross_icon.png";
 import "./Cartitems.css";
@@ -6,6 +6,24 @@ import "./Cartitems.css";
 const Cartitems = () => {
   const { all_products, cartitem, removefromcart, addtocart, totalcart } =
     useContext(Categorycontext);
+  const [couponCode, setCouponCode] = useState("");
+  const [isCouponApplied, setIsCouponApplied] = useState(false);
+
+  const handleApplyCoupon = () => {
+    if (couponCode === "WELCOME24") {
+      setIsCouponApplied(true);
+    } else {
+      alert("Invalid coupon code");
+    }
+  };
+
+  const calculateTotalWithDiscount = () => {
+    const subtotal = totalcart();
+    const discount = isCouponApplied ? subtotal * 0.1 : 0;
+    const shipping = subtotal === 0 ? 0 : 5;
+    return subtotal - discount + shipping;
+  };
+
   return (
     <>
       <div className="cartitem-list">
@@ -60,15 +78,23 @@ const Cartitems = () => {
           </div>
           <div className="total">
             <p>Total</p>
-            <p>{"$" + (totalcart() == 0 ? "0" : totalcart() + 5)}</p>
+
+            <p>{"$" + calculateTotalWithDiscount()}</p>
           </div>
 
           <button>Checkout Now</button>
         </div>
         <div className="rightside">
           <p>If you have a promo code :</p>
-          <input type="text" placeholder="Enter your code here" />
-          <button>Apply Promo Code</button>
+          <input
+            type="text"
+            placeholder="Enter your code here"
+            value={couponCode}
+            onChange={(e) => setCouponCode(e.target.value)}
+          />
+          <button onClick={handleApplyCoupon} disabled={isCouponApplied}>
+            {isCouponApplied ? "Applied" : "Apply Promo Code"}
+          </button>
         </div>
       </div>
     </>

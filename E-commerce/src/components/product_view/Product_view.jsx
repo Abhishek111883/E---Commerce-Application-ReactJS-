@@ -8,6 +8,9 @@ import { useContext } from "react";
 const Product_view = (props) => {
   const { products } = props;
   const { addtocart } = useContext(Categorycontext);
+
+  const authToken = localStorage.getItem("auth-token");
+
   return (
     <div>
       <div className="product-container">
@@ -40,20 +43,26 @@ const Product_view = (props) => {
             <p>(443)</p>
           </div>
 
-          <div className="sizes">
-            <h1 style={{ margin: "0" }}>Select size</h1>
-            <div className="select_sizes">
-              <div>S</div>
-              <div>M</div>
-              <div>L</div>
-              <div>XL</div>
-              <div>XXL</div>
+          {products.category == "jewellery" ? null : (
+            <div className="sizes">
+              <h1 style={{ margin: "0" }}>Select size</h1>
+              <div className="select_sizes">
+                <div>S</div>
+                <div>M</div>
+                <div>L</div>
+                <div>XL</div>
+                <div>XXL</div>
+              </div>
             </div>
-          </div>
+          )}
 
           <button
             onClick={() => {
-              addtocart(products.id);
+              if (authToken) {
+                addtocart(products.id);
+              } else {
+                alert("Please login to add items to cart");
+              }
             }}
           >
             ADD TO CART

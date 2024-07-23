@@ -5,6 +5,7 @@ require("dotenv").config();
 const signup = async (req, res) => {
   try {
     let check = await Employee.findOne({ email: req.body.email });
+
     if (check) {
       return res
         .status(400)

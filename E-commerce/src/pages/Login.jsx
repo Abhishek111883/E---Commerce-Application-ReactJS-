@@ -53,7 +53,7 @@ const Login = () => {
     }
 
     // console.log(formdata);
-    let result = await fetch("http://localhost:5000/login", {
+    let result = await fetch("http://localhost:3000/login", {
       method: "POST",
       body: JSON.stringify(formdata),
       headers: {
@@ -62,7 +62,6 @@ const Login = () => {
       },
     });
     result = await result.json();
-    console.log(result);
 
     if (result.success) {
       toast.success("Login Successful", {
